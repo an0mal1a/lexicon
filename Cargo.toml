@@ -6,5 +6,5 @@ members = ["crates/lexicon-core", "crates/lexicon-game", "crates/lexicon-api"]
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
-repository = "https://github.com/REPLACE_WITH_OWNER/lexicon"
+repository = "https://github.com/an0mal1a/lexicon"
 rust-version = "1.85"

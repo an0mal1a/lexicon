@@ -5,8 +5,8 @@ edition = "2024"
 
 [dependencies]
 lexicon-core = { path = "../lexicon-core" }
-lxdb = { version = "0.1.0", path = "../../../lexinexo/crates/lxdb" }
+lxdb = { version = "0.1.0", path = "../../../lxdb/crates/lxdb" }
 serde = { version = "1.0", features = ["derive"] }
 
 [dev-dependencies]
-lxdb-compiler = { version = "0.1.0", path = "../../../lexinexo/crates/lxdb-compiler" }
+lxdb-compiler = { version = "0.1.0", path = "../../../lxdb/crates/lxdb-compiler" }
