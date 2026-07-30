@@ -1,0 +1,37 @@
+# Dataset semántico de desarrollo para Lexicon.
+# Sintaxis LXDB: origen -> destino : peso
+
+automovil -> vehículo : 0.98
+vehículo -> automovil : 0.98
+automovil -> coche : 0.97
+coche -> automovil : 0.97
+automovil -> transporte : 0.86
+transporte -> automovil : 0.86
+coche -> carretera : 0.81
+carretera -> coche : 0.81
+vehículo -> carretera : 0.72
+carretera -> vehículo : 0.72
+transporte -> viaje : 0.78
+viaje -> transporte : 0.78
+viaje -> destino : 0.75
+destino -> viaje : 0.75
+carretera -> ciudad : 0.66
+ciudad -> carretera : 0.66
+ciudad -> hogar : 0.58
+hogar -> ciudad : 0.58
+hogar -> familia : 0.83
+familia -> hogar : 0.83
+familia -> amistad : 0.69
+amistad -> familia : 0.69
+amistad -> conversación : 0.73
+conversación -> amistad : 0.73
+conversación -> palabra : 0.77
+palabra -> conversación : 0.77
+palabra -> lenguaje : 0.91
+lenguaje -> palabra : 0.91
+lenguaje -> conocimiento : 0.76
+conocimiento -> lenguaje : 0.76
+conocimiento -> idea : 0.80
+idea -> conocimiento : 0.80
+idea -> conexión : 0.88
+conexión -> idea : 0.88

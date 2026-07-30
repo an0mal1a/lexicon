@@ -1,0 +1,7 @@
+target/
+.lexicon/
+apps/web/node_modules/
+apps/web/.nuxt/
+apps/web/.output/
+apps/web/.playwright-cli/
+datasets/generated/*.lxdb

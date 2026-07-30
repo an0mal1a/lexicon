@@ -1,0 +1,9 @@
+# Versioned local English development fixture.
+car -> vehicle : 0.98
+vehicle -> car : 0.98
+car -> road : 0.79
+road -> car : 0.79
+road -> journey : 0.75
+journey -> road : 0.75
+journey -> destination : 0.74
+destination -> journey : 0.74

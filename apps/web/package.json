@@ -1,0 +1,32 @@
+{
+  "name": "web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "lint": "biome check app",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vue-flow/background": "^1.3.2",
+    "@vue-flow/core": "^1.48.2",
+    "@vue-flow/minimap": "^1.5.4",
+    "@vueuse/core": "^14.4.0",
+    "@vueuse/motion": "^3.0.3",
+    "lucide-vue-next": "^1.0.0",
+    "nuxt": "^4.5.1",
+    "vue": "^3.5.40",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.6",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.1.5"
+  }
+}

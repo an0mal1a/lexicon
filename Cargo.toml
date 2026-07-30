@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["crates/lexicon-core", "crates/lexicon-game", "crates/lexicon-api"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/REPLACE_WITH_OWNER/lexicon"
+rust-version = "1.85"

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.6/schema.json",
+	"linter": {
+		"rules": {
+			"correctness": {
+				"noUnusedImports": "off",
+				"noUnusedVariables": "off"
+			},
+			"style": {
+				"useVueMultiWordComponentNames": "off",
+				"noDescendingSpecificity": "off"
+			}
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
+}
