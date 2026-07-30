@@ -184,7 +184,7 @@ struct StatsResponse {
 #[tokio::main]
 async fn main() {
     let dataset_path = env::var("LEXICON_DATASET")
-        .unwrap_or_else(|_| "datasets/generated/es-dev/dictionary.lxdb".to_owned());
+        .unwrap_or_else(|_| "datasets/generated/es/dictionary.lxdb".to_owned());
     let dataset = match DatasetReader::new().open(&dataset_path) {
         Ok(dataset) => Arc::new(dataset),
         Err(error) => {

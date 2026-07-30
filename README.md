@@ -412,8 +412,7 @@ Build the Spanish dataset from the LXDB repository:
 
 ```bash
 cargo run --manifest-path ../lxdb/Cargo.toml -p lxdb-cli -- dictionary build es \
-  --profile development \
-  --source-fixture ../lxdb/crates/lxdb-dictionary/tests/fixtures \
+  --profile game \
   --output datasets/generated/es
 ```
 
