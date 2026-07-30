@@ -8,7 +8,7 @@ use std::{fmt, sync::Arc};
 use lexicon_core::{
     Attempt, Challenge, ChallengeId, GameId, GameMode, GameSession, GameStatus, Hint, SessionId,
 };
-use lxdb::{BinaryDataset, BinaryDatasetExt, core::ids::TokenId};
+use lxdb::{BinaryDataset, BinaryDatasetExt, core::ids::TokenId, dictionary::normalize_lookup};
 
 const MAX_WORD_BYTES: usize = 64;
 const MAX_PATH_DEPTH: u32 = 4;
@@ -62,8 +62,10 @@ impl GameEngine {
     }
 
     pub fn normalize_word(&self, value: &str) -> Result<String, GameError> {
-        let word = value.trim().to_lowercase();
-        if word.is_empty() || word.len() > MAX_WORD_BYTES || word.contains(['\r', '\n', '\0']) {
+        let word = normalize_lookup(value)
+            .map_err(|_| GameError::InvalidWord)?
+            .to_lowercase();
+        if word.len() > MAX_WORD_BYTES {
             return Err(GameError::InvalidWord);
         }
         Ok(word)
@@ -344,6 +346,10 @@ mod tests {
     #[test]
     fn scores_exact_direct_and_indirect_words_from_lxdb() {
         let engine = engine();
+        assert_eq!(
+            engine.normalize_word("A\u{301}RBOL").expect("Spanish NFC should normalize"),
+            "árbol"
+        );
         let exact = engine.similarity("automovil", "automovil").expect("exact word should score");
         let direct = engine.similarity("coche", "automovil").expect("direct word should score");
         let indirect = engine.similarity("viaje", "automovil").expect("indirect word should score");

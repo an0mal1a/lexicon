@@ -184,13 +184,13 @@ struct StatsResponse {
 #[tokio::main]
 async fn main() {
     let dataset_path = env::var("LEXICON_DATASET")
-        .unwrap_or_else(|_| "datasets/generated/es-dev.lxdb".to_owned());
+        .unwrap_or_else(|_| "datasets/generated/es-dev/dictionary.lxdb".to_owned());
     let dataset = match DatasetReader::new().open(&dataset_path) {
         Ok(dataset) => Arc::new(dataset),
         Err(error) => {
             eprintln!("error: cannot load LXDB dataset {dataset_path}: {error}");
             eprintln!(
-                "hint: cargo run -p lxdb-cli -- compile datasets/fixtures/es-dev.lx -o datasets/generated/es-dev.lxdb"
+                "hint: powershell -ExecutionPolicy Bypass -File .\\scripts\\dev.ps1 -NoWeb"
             );
             std::process::exit(1);
         }
